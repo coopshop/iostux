@@ -16,7 +16,7 @@ class CreateMeetingTypes < ActiveRecord::Migration[5.0]
           'rank_evaluation',
           'team_coaching'
         );
-        ALTER TABLE meeting_types ADD COLUMN name meeting_type NOT NULL;
+        ALTER TABLE meeting_types ADD COLUMN name meeting_type NOT NULL UNIQUE;
         SQL
       end
 
