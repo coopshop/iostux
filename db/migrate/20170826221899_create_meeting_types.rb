@@ -1,7 +1,6 @@
 class CreateMeetingTypes < ActiveRecord::Migration[5.0]
   def change
     create_table :meeting_types do |t|
-      # t.meeting_type :name, null: false
       t.decimal :price, precision: 2
 
       t.timestamps
