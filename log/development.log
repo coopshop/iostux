@@ -2743,3 +2743,52 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/auth/discord" for ::1 at 2017-08-27 17:33:09 -0500
+Started GET "/auth/discord/callback?state=bbb430ca68a9dec09603663ba0d394f51c5e46d6f72ce95e&code=1D45hLgzl5m7O8FzNrcNzqjdJRKbOe" for ::1 at 2017-08-27 17:33:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"bbb430ca68a9dec09603663ba0d394f51c5e46d6f72ce95e", "code"=>"1D45hLgzl5m7O8FzNrcNzqjdJRKbOe", "provider"=>"discord"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 AND "users"."email" = $2 LIMIT $3[0m  [["name", "robotempire"], ["email", "matt.deboard@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 24.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from const_missing at /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/http/mime_type.rb:52)
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from const_missing at /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/http/mime_type.rb:52)
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (75.1ms)
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (5.5ms)
+  Rendered /Users/mattdeboard/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (167.2ms)
+Started GET "/auth/discord" for ::1 at 2017-08-27 17:33:26 -0500
+Started GET "/auth/discord/callback?state=caee95d04319c5c974cde9f16fb4f6fa2adc18f866cd6b70&code=LlJTHaIN49IW95Do0K6xEpsq3oa2rN" for ::1 at 2017-08-27 17:33:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"caee95d04319c5c974cde9f16fb4f6fa2adc18f866cd6b70", "code"=>"LlJTHaIN49IW95Do0K6xEpsq3oa2rN", "provider"=>"discord"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = $1 AND "users"."email" = $2 LIMIT $3[0m  [["name", "robotempire"], ["email", "matt.deboard@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAuthorization Load (3.0ms)[0m  [1m[34mSELECT  "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = $1 AND "authorizations"."uid" = $2 AND "authorizations"."user_id" = $3 LIMIT $4[0m  [["provider", "discord"], ["uid", "109809506464120832"], ["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "authorizations" ("user_id", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["uid", "109809506464120832"], ["created_at", 2017-08-27 22:33:29 UTC], ["updated_at", 2017-08-27 22:33:29 UTC]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 45ms (Views: 1.5ms | ActiveRecord: 26.5ms)
+
+

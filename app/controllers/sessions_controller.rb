@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
       email: auth_hash['info']['email']
     )
 
-    # @authorization = Authorization.find_or_create_by(
-    #   provider: auth_hash['provider'],
-    #   uid: auth_hash['uid'],
-    #   user_id: @user.id
-    # )
-    redirect_to '/'
+    authorization = Authorization.find_or_create_by(
+      provider: auth_hash['provider'],
+      uid: auth_hash['uid'],
+      user_id: @current_user.id
+    )
+    render json: { user: @current_user, authorization: authorization }
   end
 
   protected
