@@ -8,6 +8,6 @@ class CreateAuthorizations < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_foreign_key 'public.authorizations.user_id', 'public.users.id', column: :user_id, on_delete: :cascade
+    add_foreign_key :authorizations, :users
   end
 end

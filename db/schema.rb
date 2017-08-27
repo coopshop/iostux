@@ -23,9 +23,22 @@ ActiveRecord::Schema.define(version: 20170827003949) do
     t.datetime "updated_at",                     null: false
   end
 
+# Could not dump table "meeting_types" because of following StandardError
+#   Unknown type 'meeting_type' for column 'name'
+
   create_table "meetings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "start_time",      null: false
+    t.datetime "end_time",        null: false
+    t.boolean  "completed"
+    t.integer  "coachee_id"
+    t.integer  "coach_id"
+    t.string   "notes"
+    t.integer  "meeting_type_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["coach_id"], name: "index_meetings_on_coach_id", using: :btree
+    t.index ["coachee_id"], name: "index_meetings_on_coachee_id", using: :btree
+    t.index ["meeting_type_id"], name: "index_meetings_on_meeting_type_id", using: :btree
   end
 
   create_table "referrals", force: :cascade do |t|
@@ -45,5 +58,8 @@ ActiveRecord::Schema.define(version: 20170827003949) do
     t.datetime "updated_at",              null: false
   end
 
-  add_foreign_key "authorizations", "users", on_delete: :cascade
+  add_foreign_key "authorizations", "users"
+  add_foreign_key "meetings", "meeting_types"
+  add_foreign_key "meetings", "users", column: "coach_id"
+  add_foreign_key "meetings", "users", column: "coachee_id"
 end
