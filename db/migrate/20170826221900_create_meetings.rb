@@ -8,7 +8,7 @@ class CreateMeetings < ActiveRecord::Migration[5.0]
       t.integer :coach_id, index: true
       t.string :notes
       t.integer :meeting_type_id, null: false, index: true
-      t.timestamps
+      t.timestamps default: -> { "now()" }
     end
 
     add_foreign_key :meetings, :users, column: :coachee_id

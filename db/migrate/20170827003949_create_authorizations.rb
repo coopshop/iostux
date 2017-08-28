@@ -5,7 +5,7 @@ class CreateAuthorizations < ActiveRecord::Migration[5.0]
       t.integer :user_id, null: false
       t.string :uid, null: false
 
-      t.timestamps
+      t.timestamps default: -> { "now()" }
     end
 
     add_foreign_key :authorizations, :users

@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     create_table :users do |t|
       t.string :name, null: false
       t.string :email, null: false, default: '', unique: true
-      t.timestamps
+      t.timestamps default: -> { "now()" }
     end
   end
 end
