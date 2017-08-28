@@ -3,7 +3,7 @@ class CreateMeetingTypes < ActiveRecord::Migration[5.0]
     create_table :meeting_types do |t|
       t.decimal :price, precision: 2
 
-      t.timestamps default: -> { "now()" }
+      t.timestamps default: -> { "(now() at time zone 'utc')" }
     end
 
     reversible do |dir|
